@@ -1,14 +1,14 @@
 import pygame
-import spritesheet
+from data import spritesheet
 
 
 class Player(pygame.sprite.Sprite):
 
     def __init__(self):
         super().__init__()
-        self.sheet = spritesheet.SpriteSheet("Magesprite.png")
+        self.sheet = spritesheet.SpriteSheet("data/Magesprite.png")
         self.image = self.sheet.get_image(0, 128, 64, 63)
-        self.live_image = pygame.image.load('lives.png').convert_alpha()
+        self.live_image = pygame.image.load('data/lives.png').convert_alpha()
         self.rect = self.image.get_rect()
         self.rect.x = 400
         self.rect.y = 240
