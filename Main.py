@@ -1,19 +1,19 @@
 def main():
     import pygame
-    import mageclass
-    from transition import Transition
-    from skullclass import SkullBadGuy
-    from ogreclass import OgreBadGuy
-    from projectiles import Projectile
-    from portalSpawn import portal_spawn
-    from portalCollision import portal_collision
-    from projectile_collision import collision
-    from heart import Heart
-    from score import Score
+    from data import mageclass
+    from data.transition import Transition
+    from data.skullclass import SkullBadGuy
+    from data.ogreclass import OgreBadGuy
+    from data.projectiles import Projectile
+    from data.portalSpawn import portal_spawn
+    from data.portalCollision import portal_collision
+    from data.projectile_collision import collision
+    from data.heart import Heart
+    from data.score import Score
 
     pygame.init()
     screen = pygame.display.set_mode((836, 525))
-    background = pygame.image.load('background.png')
+    background = pygame.image.load('data/background.png')
     background_size = screen.get_rect()
 
     done = False
@@ -53,7 +53,7 @@ def main():
 
                 if event.key == pygame.K_RIGHT:
                     if shot_cooldown == 0:
-                        shot = Projectile('shot.png', "right")
+                        shot = Projectile('data/shot.png', "right")
                         shot.goto((pos[0] + 23), (pos[1] + 25))
                         shots.append(shot)
                         shot_cooldown = 15
@@ -61,7 +61,7 @@ def main():
 
                 if event.key == pygame.K_LEFT:
                     if shot_cooldown == 0:
-                        shot = Projectile('shot.png', "left")
+                        shot = Projectile('data/shot.png', "left")
                         shot.goto((pos[0] + 23), (pos[1] + 25))
                         shots.append(shot)
                         shot_cooldown = 15
@@ -69,7 +69,7 @@ def main():
 
                 if event.key == pygame.K_UP:
                     if shot_cooldown == 0:
-                        shot = Projectile('shot.png', "down")
+                        shot = Projectile('data/shot.png', "down")
                         shot.goto((pos[0] + 23), (pos[1] + 25))
                         shots.append(shot)
                         shot_cooldown = 15
@@ -77,7 +77,7 @@ def main():
 
                 if event.key == pygame.K_DOWN:
                     if shot_cooldown == 0:
-                        shot = Projectile('shot.png', "up")
+                        shot = Projectile('data/shot.png', "up")
                         shot.goto((pos[0] + 23), (pos[1] + 25))
                         shots.append(shot)
                         shot_cooldown = 15
